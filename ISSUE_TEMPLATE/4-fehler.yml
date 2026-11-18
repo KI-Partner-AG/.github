@@ -1,0 +1,32 @@
+name: Fehler im Betrieb
+description: Ein Fehler in einer produktiven Anwendung
+title: "[Fehler] "
+labels: ["fehler"]
+body:
+  - type: dropdown
+    id: fehlerklasse
+    attributes:
+      label: Fehlerklasse
+      options:
+        - Blocker (Ablauf unmöglich, Betrag falsch, Daten verloren oder Sicherheitslücke)
+        - Major (Ablauf nur mit Umweg, falsche Anzeige)
+        - Minor (Kosmetik oder Text)
+    validations:
+      required: true
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Was ist passiert?
+      description: Schritte, Zeitpunkt, Standort. Keine Personendaten oder vollständigen Codes.
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was wäre richtig gewesen?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Grundregel 4: Jeder Fehler wird ein Test, eine Regel oder eine Skill-Anpassung. Der Fix-PR verweist auf dieses Issue.

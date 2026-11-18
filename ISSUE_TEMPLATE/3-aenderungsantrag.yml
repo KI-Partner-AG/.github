@@ -1,0 +1,34 @@
+name: Änderungsantrag
+description: Eine neue oder geänderte Anforderung nach der Abnahme der Spezifikation
+title: "[Änderung] "
+labels: ["aenderungsantrag"]
+body:
+  - type: textarea
+    id: was
+    attributes:
+      label: Was soll sich ändern?
+    validations:
+      required: true
+  - type: textarea
+    id: warum
+    attributes:
+      label: Warum?
+      description: Welcher Nutzen für wen, und was passiert, wenn es nicht umgesetzt wird?
+    validations:
+      required: true
+  - type: input
+    id: betroffen
+    attributes:
+      label: Betroffene Anforderungen
+      placeholder: US-07, GR-03
+  - type: input
+    id: antrag-von
+    attributes:
+      label: Gewünscht von
+      placeholder: Name und Rolle beim Kunden
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Die Factory schätzt Aufwand und Auswirkung ein. Umgesetzt wird erst nach dem Entscheid der Product Ownerin des Kunden.

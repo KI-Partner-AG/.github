@@ -1,0 +1,53 @@
+name: Anforderung
+description: Eine User Story oder Geschäftsregel mit Akzeptanzkriterien (Grundregel 1)
+title: "[US-] "
+labels: ["anforderung"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keine Zeile Code ohne Anforderung mit Akzeptanzkriterium. Die ID kommt aus dem Anforderungsdokument des Projekts.
+  - type: input
+    id: id
+    attributes:
+      label: ID
+      description: z. B. US-07 für eine User Story, GR-03 für eine Geschäftsregel, NFR-01 für eine Qualitätsanforderung
+      placeholder: US-07
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      description: Als … möchte ich …, damit …
+    validations:
+      required: true
+  - type: textarea
+    id: akzeptanz
+    attributes:
+      label: Akzeptanzkriterien
+      description: Prüfbar formuliert, am besten als Gegeben/Wenn/Dann
+      placeholder: |
+        - Gegeben ein aktiver Gutschein über CHF 50, wenn CHF 20 eingelöst werden, dann beträgt der Saldo CHF 30.
+    validations:
+      required: true
+  - type: dropdown
+    id: prioritaet
+    attributes:
+      label: Priorität
+      options:
+        - Must
+        - Should
+        - Could
+    validations:
+      required: true
+  - type: dropdown
+    id: risikoklasse
+    attributes:
+      label: Risikoklasse
+      options:
+        - A (Geld, Salden, Buchungen, Anmeldung, Rechte, Personendaten, Netzwerk, Migrationen)
+        - B (übrige Fachlogik, Abläufe in der Oberfläche)
+        - C (Texte, Dokumentation, Gestaltung)
+    validations:
+      required: true

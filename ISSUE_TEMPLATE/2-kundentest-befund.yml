@@ -1,0 +1,55 @@
+name: Kundentest-Befund
+description: Ein Befund aus einem Kundentest (KT-0 bis KT-6)
+title: "[KT-] "
+labels: ["kundentest-befund"]
+body:
+  - type: input
+    id: kundentest
+    attributes:
+      label: Kundentest
+      placeholder: KT-2
+    validations:
+      required: true
+  - type: input
+    id: szenario
+    attributes:
+      label: Szenario
+      description: Nummer und Titel aus dem Testskript
+      placeholder: "S-04 Gutschein teilweise einlösen"
+    validations:
+      required: true
+  - type: dropdown
+    id: fehlerklasse
+    attributes:
+      label: Fehlerklasse
+      description: Erste Einschätzung; die Factory bestätigt sie bei der Triage
+      options:
+        - Blocker (Ablauf unmöglich, Betrag falsch, Daten verloren oder Sicherheitslücke; stoppt den Release)
+        - Major (Ablauf nur mit Umweg, falsche Anzeige; vor dem Go-live behoben)
+        - Minor (Kosmetik oder Text; nach Absprache)
+        - Wunsch (neue Anforderung, kein Fehler; wird Änderungsantrag)
+    validations:
+      required: true
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Was wurde gemacht?
+      description: Schritte, so wie die Testperson sie erlebt hat
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was wurde erwartet, was ist passiert?
+    validations:
+      required: true
+  - type: input
+    id: umgebung
+    attributes:
+      label: Standort und Gerät
+      placeholder: Gustarium, iPad an der Kasse, Safari
+  - type: textarea
+    id: belege
+    attributes:
+      label: Screenshots oder Aufzeichnung
+      description: Keine echten Kundendaten, Gutscheincodes nur gekürzt
